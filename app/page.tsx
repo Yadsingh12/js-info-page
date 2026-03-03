@@ -7,7 +7,7 @@ import { JSFooter } from "@/components/js-footer"
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-background text-foreground font-sans">
+    <main className="min-h-screen bg-background text-foreground font-sans max-w-[1400px] mx-auto">
       <JSHero />
       <JSStats />
       <JSFeatures />

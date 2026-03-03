@@ -1,59 +1,71 @@
 const features = [
   {
+    index: "01",
     title: "Runs Everywhere",
     description:
-      "JavaScript runs in every modern browser without any installation. It also runs on the server via Node.js, making it a true full-stack language.",
+      "Runs natively in every browser without installation. Node.js brings JS to servers, CLIs, and beyond — a true full-stack language.",
   },
   {
+    index: "02",
     title: "Dynamic & Flexible",
     description:
-      "Variables can hold any type of value. Types are checked at runtime, allowing rapid prototyping and flexible data handling.",
+      "Variables hold any type. Types are resolved at runtime, enabling rapid prototyping and expressive, flexible code patterns.",
   },
   {
-    title: "Asynchronous by Nature",
+    index: "03",
+    title: "Async by Design",
     description:
-      "With Promises, async/await, and the event loop, JS handles non-blocking I/O elegantly — perfect for web apps, APIs, and real-time systems.",
+      "Promises, async/await, and the event loop make non-blocking I/O elegant — ideal for web apps, APIs, and real-time systems.",
   },
   {
-    title: "Prototype-based OOP",
+    index: "04",
+    title: "Prototype-Based OOP",
     description:
-      "Objects can directly inherit from other objects via the prototype chain. ES6 introduced class syntax as a cleaner layer on top of this.",
+      "Objects inherit directly from other objects via the prototype chain. ES6 class syntax provides a cleaner layer on top.",
   },
   {
-    title: "First-class Functions",
+    index: "05",
+    title: "First-Class Functions",
     description:
-      "Functions are values — they can be stored in variables, passed as arguments, and returned from other functions, enabling functional programming.",
+      "Functions are values. Pass them as arguments, return them, store them — this enables powerful functional programming patterns.",
   },
   {
+    index: "06",
     title: "Vast Ecosystem",
     description:
-      "npm hosts over 2 million packages. Frameworks like React, Vue, Angular, and Next.js make building complex UIs straightforward and maintainable.",
+      "npm hosts over 2 million packages. React, Vue, Angular, Next.js — the framework landscape is unmatched in any other language.",
   },
 ]
 
 export function JSFeatures() {
   return (
     <section className="border-b border-border">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-8">
+      {/* Section label */}
+      <div className="flex items-center justify-between px-6 md:px-16 h-10 border-b border-border">
+        <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-muted-foreground">
           Key Characteristics
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="group p-5 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                <h3 className="font-semibold text-foreground text-sm">{feature.title}</h3>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
+        </span>
+        <span className="font-mono text-[11px] text-muted-foreground">6 features</span>
+      </div>
+
+      {/* Features — 3-col grid on desktop, divided lines, no card backgrounds */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 divide-border md:[&>*:nth-child(n+3)]:border-t md:[&>*:nth-child(3)]:border-l lg:[&>*:nth-child(n+4)]:border-t lg:[&>*:nth-child(3)]:border-l-0 md:[&>*:even]:border-l lg:[&>*:nth-child(3n+2)]:border-x lg:[&>*:nth-child(3n)]:border-l">
+        {features.map((feature) => (
+          <div
+            key={feature.title}
+            className="group px-6 md:px-10 py-8 flex flex-col gap-3 hover:bg-card transition-colors"
+          >
+            <span className="font-mono text-[11px] tracking-[0.15em] text-primary">
+              {feature.index}
+            </span>
+            <h3 className="font-bold text-foreground text-base leading-tight">
+              {feature.title}
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+              {feature.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   )
